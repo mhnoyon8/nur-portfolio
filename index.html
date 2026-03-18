@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nur — Developer Portfolio</title>
+  <meta name="description" content="Professional developer portfolio for Nur." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121933;
+      --soft: #1a2347;
+      --text: #eef2ff;
+      --muted: #a5b4d4;
+      --accent: #6ea8fe;
+      --accent-2: #7ef0c9;
+      --border: rgba(255,255,255,.08);
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #172247 0%, var(--bg) 50%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(11,16,32,.75);
+      border-bottom: 1px solid var(--border);
+    }
+    nav { display:flex; align-items:center; justify-content:space-between; padding: 16px 0; }
+    .brand { font-weight: 800; letter-spacing: .3px; }
+    .nav-links { display:flex; gap: 18px; color: var(--muted); font-size: 14px; }
+    .hero { padding: 84px 0 48px; }
+    .hero-grid { display:grid; grid-template-columns: 1.4fr .9fr; gap: 28px; align-items:center; }
+    .eyebrow {
+      display:inline-flex; gap:8px; align-items:center;
+      padding: 8px 12px; border-radius: 999px;
+      background: rgba(126,240,201,.08); color: var(--accent-2); font-size: 14px;
+      border: 1px solid rgba(126,240,201,.18);
+    }
+    h1 { font-size: clamp(36px, 7vw, 64px); line-height: 1.05; margin: 16px 0; }
+    .lead { font-size: 18px; color: var(--muted); max-width: 62ch; }
+    .actions { display:flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 14px 20px; border-radius: 14px; font-weight: 700;
+      border: 1px solid var(--border);
+      transition: .2s ease;
+    }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), #8c8cff); color: #08111f; border: none; }
+    .btn.secondary { background: rgba(255,255,255,.03); color: var(--text); }
+    .btn:hover { transform: translateY(-2px); }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid var(--border);
+      border-radius: 24px; box-shadow: var(--shadow);
+    }
+    .hero-card { padding: 28px; }
+    .stat-grid { display:grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 18px; }
+    .stat { padding: 18px; border-radius: 18px; background: rgba(255,255,255,.03); border: 1px solid var(--border); }
+    .stat strong { display:block; font-size: 26px; }
+    section { padding: 36px 0; }
+    .section-head { margin-bottom: 22px; }
+    .section-head h2 { margin: 0 0 8px; font-size: 32px; }
+    .section-head p { margin: 0; color: var(--muted); }
+    .about, .contact-box { padding: 28px; }
+    .skills-grid, .projects-grid { display:grid; gap: 18px; }
+    .skills-grid { grid-template-columns: repeat(3, 1fr); }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .skill, .project { padding: 22px; }
+    .skill h3, .project h3 { margin-top: 0; }
+    .tags { display:flex; flex-wrap:wrap; gap: 10px; margin-top: 18px; }
+    .tag {
+      padding: 8px 12px; border-radius: 999px; font-size: 13px;
+      color: var(--muted); background: rgba(255,255,255,.03); border: 1px solid var(--border);
+    }
+    .project p { color: var(--muted); }
+    .project-links { display:flex; gap: 12px; margin-top: 16px; font-size: 14px; color: var(--accent-2); }
+    footer { padding: 36px 0 60px; color: var(--muted); font-size: 14px; }
+    @media (max-width: 900px) {
+      .hero-grid, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+      .nav-links { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <div class="brand">Nur.dev</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">● Developer Portfolio</span>
+          <h1>Nur builds modern, clean, and reliable digital products.</h1>
+          <p class="lead">
+            I am a developer focused on building responsive web experiences, scalable product interfaces,
+            and practical software solutions that balance performance, usability, and clean execution.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn secondary" href="#contact">Contact Me</a>
+          </div>
+        </div>
+        <div class="card hero-card">
+          <h3>Professional Snapshot</h3>
+          <p style="color: var(--muted); margin-top: 0;">Developer focused on shipping clean interfaces, maintainable code, and practical user-first solutions.</p>
+          <div class="stat-grid">
+            <div class="stat"><strong>Frontend</strong><span>React, HTML, CSS, JS</span></div>
+            <div class="stat"><strong>Backend</strong><span>Node.js, APIs, systems</span></div>
+            <div class="stat"><strong>Focus</strong><span>Web apps, dashboards, tools</span></div>
+            <div class="stat"><strong>Style</strong><span>Clean, responsive, practical</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap card about">
+        <div class="section-head">
+          <h2>About Me</h2>
+          <p>A concise overview of who I am and how I work.</p>
+        </div>
+        <p>
+          I work as a developer with an emphasis on clean architecture, responsive UI, and practical implementation.
+          My goal is to create products that are visually polished, easy to use, and technically dependable.
+          I enjoy turning ideas into structured digital experiences that solve real problems.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Core Skills</h2>
+          <p>Technologies and strengths I bring into development work.</p>
+        </div>
+        <div class="skills-grid">
+          <div class="card skill">
+            <h3>Frontend Development</h3>
+            <p>Building responsive, modern, and user-friendly interfaces for web applications.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">React</span></div>
+          </div>
+          <div class="card skill">
+            <h3>Backend & Logic</h3>
+            <p>Creating functional systems, APIs, and application logic with maintainable structure.</p>
+            <div class="tags"><span class="tag">Node.js</span><span class="tag">REST APIs</span><span class="tag">Express</span><span class="tag">Database Logic</span></div>
+          </div>
+          <div class="card skill">
+            <h3>Product Execution</h3>
+            <p>Combining development, structure, and practical delivery to ship useful digital products.</p>
+            <div class="tags"><span class="tag">UI/UX Thinking</span><span class="tag">Dashboards</span><span class="tag">Problem Solving</span><span class="tag">Deployment Ready</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Selected Projects</h2>
+          <p>Sample project blocks that can be replaced with real production work later.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="card project">
+            <h3>Developer Dashboard</h3>
+            <p>A clean monitoring and management interface for digital systems, focused on real-time visibility and usability.</p>
+            <div class="project-links"><span>Case Study</span><span>Live Demo</span></div>
+          </article>
+          <article class="card project">
+            <h3>Portfolio / Brand Website</h3>
+            <p>A modern personal website designed to present identity, work, and contact information in a professional way.</p>
+            <div class="project-links"><span>Case Study</span><span>Source Code</span></div>
+          </article>
+          <article class="card project">
+            <h3>Operations Tooling</h3>
+            <p>A practical utility layer for automating tasks, organizing workflows, and improving execution speed.</p>
+            <div class="project-links"><span>Overview</span><span>Architecture</span></div>
+          </article>
+          <article class="card project">
+            <h3>Custom Web Application</h3>
+            <p>A scalable web application concept focused on performance, maintainability, and clear product structure.</p>
+            <div class="project-links"><span>Preview</span><span>Tech Stack</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap card contact-box">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p>Open for collaboration, freelance development, and product-focused work.</p>
+        </div>
+        <p>Email: <a href="mailto:nur@example.com">nur@example.com</a></p>
+        <p>GitHub: <a href="https://github.com/" target="_blank" rel="noreferrer">github.com/your-profile</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/" target="_blank" rel="noreferrer">linkedin.com/in/your-profile</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Nur — Developer Portfolio. Built with a clean one-page structure for fast publishing and editing.</div>
+  </footer>
+</body>
+</html>
